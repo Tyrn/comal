@@ -1,6 +1,9 @@
+// Package imports:
 import 'package:bloc_test/bloc_test.dart';
-import 'package:comal/counter/counter.dart';
 import 'package:flutter_test/flutter_test.dart';
+
+// Project imports:
+import 'package:comal/counter/counter.dart';
 
 void main() {
   group('CounterCubit', () {

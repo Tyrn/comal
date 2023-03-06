@@ -14,11 +14,17 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   intl: ^0.17.0
+  window_size:
+    git:
+      url: https://github.com/google/flutter-desktop-embedding.git
+      path: plugins/window_size
+      ref: 6c66ad23ee79749f30a8eece542cf54eaf157ed8
 
 dev_dependencies:
   bloc_test: ^9.1.1
   flutter_test:
     sdk: flutter
+  import_sorter: ^4.6.0
   mocktail: ^0.3.0
   very_good_analysis: ^4.0.0
 

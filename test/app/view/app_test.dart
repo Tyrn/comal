@@ -1,6 +1,9 @@
+// Package imports:
+import 'package:flutter_test/flutter_test.dart';
+
+// Project imports:
 import 'package:comal/app/app.dart';
 import 'package:comal/counter/counter.dart';
-import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   group('App', () {
