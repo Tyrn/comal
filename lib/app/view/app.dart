@@ -8,16 +8,15 @@ import 'package:window_size/window_size.dart';
 // Project imports:
 import 'package:comal/counter/counter.dart';
 import 'package:comal/l10n/l10n.dart';
+import 'package:comal/platform.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
 
   @override
   Widget build(BuildContext context) {
-    if (defaultTargetPlatform == TargetPlatform.linux ||
-        defaultTargetPlatform == TargetPlatform.macOS ||
-        defaultTargetPlatform == TargetPlatform.windows) {
-      setWindowTitle("Comal ABP");
+    if (Platform.isDesktop) {
+      setWindowTitle("ComaL ABP");
     }
     return MaterialApp(
       theme: ThemeData(
