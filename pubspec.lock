@@ -33,6 +33,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.10.0"
+  auto_route:
+    dependency: "direct main"
+    description:
+      name: auto_route
+      sha256: "70b2461cc58d6a46c20859f23148b370165da183d21a82b783156f9a91d9c38b"
+      url: "https://pub.dev"
+    source: hosted
+    version: "6.0.1"
   bloc:
     dependency: "direct main"
     description:
@@ -147,6 +155,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_rx_bloc:
+    dependency: "direct main"
+    description:
+      name: flutter_rx_bloc
+      sha256: "1c37acd5e22a84de1d87202d86accc6e049b933b00531df81350da6fb718f033"
+      url: "https://pub.dev"
+    source: hosted
+    version: "5.0.2"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -320,6 +336,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.3"
+  rx_bloc:
+    dependency: transitive
+    description:
+      name: rx_bloc
+      sha256: "23b6458f116784e167e91fb06cfa9d4189b2c56d015927f5d60a98c9362486d2"
+      url: "https://pub.dev"
+    source: hosted
+    version: "4.0.0"
+  rxdart:
+    dependency: transitive
+    description:
+      name: rxdart
+      sha256: "0c7c0cedd93788d996e33041ffecda924cc54389199cde4e6a34b440f50044cb"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.27.7"
   shelf:
     dependency: transitive
     description:
@@ -520,4 +552,4 @@ packages:
     version: "3.1.1"
 sdks:
   dart: ">=2.19.0 <3.0.0"
-  flutter: ">=1.16.0"
+  flutter: ">=3.0.0"
