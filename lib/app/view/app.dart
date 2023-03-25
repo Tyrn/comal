@@ -19,6 +19,7 @@ class App extends StatelessWidget {
       setWindowTitle("ComaL ABP");
     }
     return MaterialApp(
+      debugShowCheckedModeBanner: true,
       theme: ThemeData(
         appBarTheme: const AppBarTheme(color: Color(0xFF13B9FF)),
         colorScheme: ColorScheme.fromSwatch(
