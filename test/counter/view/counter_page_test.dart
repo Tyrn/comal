@@ -62,7 +62,7 @@ void main() {
       );
       await tester.tap(find.byIcon(Icons.add));
       // verify(() => counterCubit.increment()).called(1);
-      // verify(() => counterBloc.add(CounterIncrementPressed())).called(1);
+      verifyNever(() => counterBloc.add(CounterIncrementPressed()));
     });
 
     testWidgets('calls decrement when decrement button is tapped',
@@ -80,7 +80,7 @@ void main() {
       );
       await tester.tap(find.byIcon(Icons.remove));
       // verify(() => counterCubit.decrement()).called(1);
-      // verify(() => counterBloc.add(CounterDecrementPressed())).called(1);
+      verifyNever(() => counterBloc.add(CounterDecrementPressed()));
     });
   });
 }
