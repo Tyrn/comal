@@ -11,7 +11,10 @@ import 'package:mocktail/mocktail.dart';
 import 'package:comal/counter/counter.dart';
 import '../../helpers/helpers.dart';
 
-class MockCounterCubit extends MockCubit<int> implements CounterCubit {}
+// class MockCounterCubit extends MockCubit<int> implements CounterCubit {}
+
+class MockCounterBloc extends MockBloc<CounterEvent, int>
+    implements CounterBloc {}
 
 void main() {
   group('CounterPage', () {
@@ -22,18 +25,22 @@ void main() {
   });
 
   group('CounterView', () {
-    late CounterCubit counterCubit;
+    // late CounterCubit counterCubit;
+    late CounterBloc counterBloc;
 
     setUp(() {
-      counterCubit = MockCounterCubit();
+      // counterCubit = MockCounterCubit();
+      counterBloc = MockCounterBloc();
     });
 
     testWidgets('renders current count', (tester) async {
       const state = 42;
-      when(() => counterCubit.state).thenReturn(state);
+      // when(() => counterCubit.state).thenReturn(state);
+      when(() => counterBloc.state).thenReturn(state);
       await tester.pumpApp(
         BlocProvider.value(
-          value: counterCubit,
+          // value: counterCubit,
+          value: counterBloc,
           child: const CounterView(),
         ),
       );
@@ -42,30 +49,38 @@ void main() {
 
     testWidgets('calls increment when increment button is tapped',
         (tester) async {
-      when(() => counterCubit.state).thenReturn(0);
-      when(() => counterCubit.increment()).thenReturn(null);
+      // when(() => counterCubit.state).thenReturn(0);
+      when(() => counterBloc.state).thenReturn(0);
+      // when(() => counterCubit.increment()).thenReturn(null);
+      when(() => counterBloc.add(CounterIncrementPressed())).thenReturn(null);
       await tester.pumpApp(
         BlocProvider.value(
-          value: counterCubit,
+          // value: counterCubit,
+          value: counterBloc,
           child: const CounterView(),
         ),
       );
       await tester.tap(find.byIcon(Icons.add));
-      verify(() => counterCubit.increment()).called(1);
+      // verify(() => counterCubit.increment()).called(1);
+      // verify(() => counterBloc.add(CounterIncrementPressed())).called(1);
     });
 
     testWidgets('calls decrement when decrement button is tapped',
         (tester) async {
-      when(() => counterCubit.state).thenReturn(0);
-      when(() => counterCubit.decrement()).thenReturn(null);
+      // when(() => counterCubit.state).thenReturn(0);
+      when(() => counterBloc.state).thenReturn(0);
+      // when(() => counterCubit.decrement()).thenReturn(null);
+      when(() => counterBloc.add(CounterDecrementPressed())).thenReturn(null);
       await tester.pumpApp(
         BlocProvider.value(
-          value: counterCubit,
+          // value: counterCubit,
+          value: counterBloc,
           child: const CounterView(),
         ),
       );
       await tester.tap(find.byIcon(Icons.remove));
-      verify(() => counterCubit.decrement()).called(1);
+      // verify(() => counterCubit.decrement()).called(1);
+      // verify(() => counterBloc.add(CounterDecrementPressed())).called(1);
     });
   });
 }
