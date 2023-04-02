@@ -17,8 +17,8 @@ class AppBlocObserver extends BlocObserver {
     log('onChange(${bloc.runtimeType}, $change)');
   }
 
-  @override
-  void onEvent(Bloc<dynamic, dynamic> bloc, Object? event) {
+//  @override
+  void _onEvent(Bloc<dynamic, dynamic> bloc, Object? event) {
     super.onEvent(bloc, event);
     log('onEvent(${bloc.runtimeType}, $event)');
   }
