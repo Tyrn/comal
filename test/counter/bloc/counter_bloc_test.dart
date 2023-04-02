@@ -11,17 +11,17 @@ void main() {
       expect(CounterBloc().state, equals(0));
     });
 
-    blocTest<CounterCubit, int>(
+    blocTest<CounterBloc, int>(
       'emits [1] when increment is called',
-      build: CounterCubit.new,
-      act: (cubit) => cubit.increment(),
+      build: CounterBloc.new,
+      act: (bloc) => bloc.add(CounterIncrementPressed()),
       expect: () => [equals(1)],
     );
 
-    blocTest<CounterCubit, int>(
+    blocTest<CounterBloc, int>(
       'emits [-1] when decrement is called',
-      build: CounterCubit.new,
-      act: (cubit) => cubit.decrement(),
+      build: CounterBloc.new,
+      act: (bloc) => bloc.add(CounterDecrementPressed()),
       expect: () => [equals(-1)],
     );
   });
