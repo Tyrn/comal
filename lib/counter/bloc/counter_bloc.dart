@@ -1,15 +1,14 @@
-// Package imports:
 import 'package:bloc/bloc.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-abstract class CounterEvent {}
+part 'counter_event.dart';
+part 'counter_state.dart';
+part 'counter_bloc.freezed.dart';
 
-class CounterIncrementPressed extends CounterEvent {}
-
-class CounterDecrementPressed extends CounterEvent {}
-
-class CounterBloc extends Bloc<CounterEvent, int> {
-  CounterBloc() : super(0) {
-    on<CounterIncrementPressed>((event, emit) => emit(state + 1));
-    on<CounterDecrementPressed>((event, emit) => emit(state - 1));
+class CounterBloc extends Bloc<CounterEvent, CounterState> {
+  CounterBloc() : super(const CounterState.initial()) {
+    on<CounterEvent>((event, emit) {
+      // TODO: implement event handler
+    });
   }
 }
