@@ -18,33 +18,39 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$CounterEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() started,
+    required TResult Function() increment,
+    required TResult Function() decrement,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
+    TResult? Function()? increment,
+    TResult? Function()? decrement,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
+    TResult Function()? increment,
+    TResult Function()? decrement,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
+    required TResult Function(_Increment value) increment,
+    required TResult Function(_Decrement value) decrement,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
+    TResult? Function(_Increment value)? increment,
+    TResult? Function(_Decrement value)? decrement,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
+    TResult Function(_Increment value)? increment,
+    TResult Function(_Decrement value)? decrement,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -69,34 +75,35 @@ class _$CounterEventCopyWithImpl<$Res, $Val extends CounterEvent>
 }
 
 /// @nodoc
-abstract class _$$_StartedCopyWith<$Res> {
-  factory _$$_StartedCopyWith(
-          _$_Started value, $Res Function(_$_Started) then) =
-      __$$_StartedCopyWithImpl<$Res>;
+abstract class _$$_IncrementCopyWith<$Res> {
+  factory _$$_IncrementCopyWith(
+          _$_Increment value, $Res Function(_$_Increment) then) =
+      __$$_IncrementCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_StartedCopyWithImpl<$Res>
-    extends _$CounterEventCopyWithImpl<$Res, _$_Started>
-    implements _$$_StartedCopyWith<$Res> {
-  __$$_StartedCopyWithImpl(_$_Started _value, $Res Function(_$_Started) _then)
+class __$$_IncrementCopyWithImpl<$Res>
+    extends _$CounterEventCopyWithImpl<$Res, _$_Increment>
+    implements _$$_IncrementCopyWith<$Res> {
+  __$$_IncrementCopyWithImpl(
+      _$_Increment _value, $Res Function(_$_Increment) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_Started implements _Started {
-  const _$_Started();
+class _$_Increment implements _Increment {
+  const _$_Increment();
 
   @override
   String toString() {
-    return 'CounterEvent.started()';
+    return 'CounterEvent.increment()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Started);
+        (other.runtimeType == runtimeType && other is _$_Increment);
   }
 
   @override
@@ -105,27 +112,30 @@ class _$_Started implements _Started {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() started,
+    required TResult Function() increment,
+    required TResult Function() decrement,
   }) {
-    return started();
+    return increment();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
+    TResult? Function()? increment,
+    TResult? Function()? decrement,
   }) {
-    return started?.call();
+    return increment?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
+    TResult Function()? increment,
+    TResult Function()? decrement,
     required TResult orElse(),
   }) {
-    if (started != null) {
-      return started();
+    if (increment != null) {
+      return increment();
     }
     return orElse();
   }
@@ -133,69 +143,185 @@ class _$_Started implements _Started {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
+    required TResult Function(_Increment value) increment,
+    required TResult Function(_Decrement value) decrement,
   }) {
-    return started(this);
+    return increment(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
+    TResult? Function(_Increment value)? increment,
+    TResult? Function(_Decrement value)? decrement,
   }) {
-    return started?.call(this);
+    return increment?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
+    TResult Function(_Increment value)? increment,
+    TResult Function(_Decrement value)? decrement,
     required TResult orElse(),
   }) {
-    if (started != null) {
-      return started(this);
+    if (increment != null) {
+      return increment(this);
     }
     return orElse();
   }
 }
 
-abstract class _Started implements CounterEvent {
-  const factory _Started() = _$_Started;
+abstract class _Increment implements CounterEvent {
+  const factory _Increment() = _$_Increment;
+}
+
+/// @nodoc
+abstract class _$$_DecrementCopyWith<$Res> {
+  factory _$$_DecrementCopyWith(
+          _$_Decrement value, $Res Function(_$_Decrement) then) =
+      __$$_DecrementCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_DecrementCopyWithImpl<$Res>
+    extends _$CounterEventCopyWithImpl<$Res, _$_Decrement>
+    implements _$$_DecrementCopyWith<$Res> {
+  __$$_DecrementCopyWithImpl(
+      _$_Decrement _value, $Res Function(_$_Decrement) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_Decrement implements _Decrement {
+  const _$_Decrement();
+
+  @override
+  String toString() {
+    return 'CounterEvent.decrement()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_Decrement);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() increment,
+    required TResult Function() decrement,
+  }) {
+    return decrement();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? increment,
+    TResult? Function()? decrement,
+  }) {
+    return decrement?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? increment,
+    TResult Function()? decrement,
+    required TResult orElse(),
+  }) {
+    if (decrement != null) {
+      return decrement();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Increment value) increment,
+    required TResult Function(_Decrement value) decrement,
+  }) {
+    return decrement(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Increment value)? increment,
+    TResult? Function(_Decrement value)? decrement,
+  }) {
+    return decrement?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Increment value)? increment,
+    TResult Function(_Decrement value)? decrement,
+    required TResult orElse(),
+  }) {
+    if (decrement != null) {
+      return decrement(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Decrement implements CounterEvent {
+  const factory _Decrement() = _$_Decrement;
 }
 
 /// @nodoc
 mixin _$CounterState {
+  int get value => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
+    required TResult Function(int value) initial,
+    required TResult Function(int value) current,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
+    TResult? Function(int value)? initial,
+    TResult? Function(int value)? current,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
+    TResult Function(int value)? initial,
+    TResult Function(int value)? current,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
+    required TResult Function(_Current value) current,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
+    TResult? Function(_Current value)? current,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(_Current value)? current,
     required TResult orElse(),
   }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $CounterStateCopyWith<CounterState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -204,6 +330,8 @@ abstract class $CounterStateCopyWith<$Res> {
   factory $CounterStateCopyWith(
           CounterState value, $Res Function(CounterState) then) =
       _$CounterStateCopyWithImpl<$Res, CounterState>;
+  @useResult
+  $Res call({int value});
 }
 
 /// @nodoc
@@ -215,13 +343,30 @@ class _$CounterStateCopyWithImpl<$Res, $Val extends CounterState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_value.copyWith(
+      value: null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as int,
+    ) as $Val);
+  }
 }
 
 /// @nodoc
-abstract class _$$_InitialCopyWith<$Res> {
+abstract class _$$_InitialCopyWith<$Res>
+    implements $CounterStateCopyWith<$Res> {
   factory _$$_InitialCopyWith(
           _$_Initial value, $Res Function(_$_Initial) then) =
       __$$_InitialCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({int value});
 }
 
 /// @nodoc
@@ -230,51 +375,79 @@ class __$$_InitialCopyWithImpl<$Res>
     implements _$$_InitialCopyWith<$Res> {
   __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$_Initial(
+      null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$_Initial implements _Initial {
-  const _$_Initial();
+  const _$_Initial([this.value = 0]);
+
+  @override
+  @JsonKey()
+  final int value;
 
   @override
   String toString() {
-    return 'CounterState.initial()';
+    return 'CounterState.initial(value: $value)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Initial);
+        (other.runtimeType == runtimeType &&
+            other is _$_Initial &&
+            (identical(other.value, value) || other.value == value));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, value);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_InitialCopyWith<_$_Initial> get copyWith =>
+      __$$_InitialCopyWithImpl<_$_Initial>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
+    required TResult Function(int value) initial,
+    required TResult Function(int value) current,
   }) {
-    return initial();
+    return initial(value);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
+    TResult? Function(int value)? initial,
+    TResult? Function(int value)? current,
   }) {
-    return initial?.call();
+    return initial?.call(value);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
+    TResult Function(int value)? initial,
+    TResult Function(int value)? current,
     required TResult orElse(),
   }) {
     if (initial != null) {
-      return initial();
+      return initial(value);
     }
     return orElse();
   }
@@ -283,6 +456,7 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
+    required TResult Function(_Current value) current,
   }) {
     return initial(this);
   }
@@ -291,6 +465,7 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
+    TResult? Function(_Current value)? current,
   }) {
     return initial?.call(this);
   }
@@ -299,6 +474,7 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(_Current value)? current,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -309,5 +485,148 @@ class _$_Initial implements _Initial {
 }
 
 abstract class _Initial implements CounterState {
-  const factory _Initial() = _$_Initial;
+  const factory _Initial([final int value]) = _$_Initial;
+
+  @override
+  int get value;
+  @override
+  @JsonKey(ignore: true)
+  _$$_InitialCopyWith<_$_Initial> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_CurrentCopyWith<$Res>
+    implements $CounterStateCopyWith<$Res> {
+  factory _$$_CurrentCopyWith(
+          _$_Current value, $Res Function(_$_Current) then) =
+      __$$_CurrentCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({int value});
+}
+
+/// @nodoc
+class __$$_CurrentCopyWithImpl<$Res>
+    extends _$CounterStateCopyWithImpl<$Res, _$_Current>
+    implements _$$_CurrentCopyWith<$Res> {
+  __$$_CurrentCopyWithImpl(_$_Current _value, $Res Function(_$_Current) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$_Current(
+      null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_Current implements _Current {
+  const _$_Current(this.value);
+
+  @override
+  final int value;
+
+  @override
+  String toString() {
+    return 'CounterState.current(value: $value)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_Current &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, value);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_CurrentCopyWith<_$_Current> get copyWith =>
+      __$$_CurrentCopyWithImpl<_$_Current>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(int value) initial,
+    required TResult Function(int value) current,
+  }) {
+    return current(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(int value)? initial,
+    TResult? Function(int value)? current,
+  }) {
+    return current?.call(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(int value)? initial,
+    TResult Function(int value)? current,
+    required TResult orElse(),
+  }) {
+    if (current != null) {
+      return current(value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Current value) current,
+  }) {
+    return current(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Current value)? current,
+  }) {
+    return current?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Current value)? current,
+    required TResult orElse(),
+  }) {
+    if (current != null) {
+      return current(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Current implements CounterState {
+  const factory _Current(final int value) = _$_Current;
+
+  @override
+  int get value;
+  @override
+  @JsonKey(ignore: true)
+  _$$_CurrentCopyWith<_$_Current> get copyWith =>
+      throw _privateConstructorUsedError;
 }
