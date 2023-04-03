@@ -11,7 +11,7 @@ import 'package:mocktail/mocktail.dart';
 import 'package:comal/counter/counter.dart';
 import '../../helpers/helpers.dart';
 
-class MockCounterBloc extends MockBloc<CounterEvent, int>
+class MockCounterBloc extends MockBloc<CounterEvent, CounterState>
     implements CounterBloc {}
 
 void main() {
@@ -30,7 +30,7 @@ void main() {
     });
 
     testWidgets('renders current count', (tester) async {
-      const state = 42;
+      const state = CounterState.current(42);
       when(() => counterBloc.state).thenReturn(state);
       await tester.pumpApp(
         BlocProvider.value(
@@ -38,13 +38,14 @@ void main() {
           child: const CounterView(),
         ),
       );
-      expect(find.text('$state'), findsOneWidget);
+      expect(find.text('${state.value}'), findsOneWidget);
     });
 
     testWidgets('calls increment when increment button is tapped',
         (tester) async {
-      when(() => counterBloc.state).thenReturn(0);
-      when(() => counterBloc.add(CounterIncrementPressed())).thenReturn(null);
+      when(() => counterBloc.state).thenReturn(const CounterState.current(0));
+      when(() => counterBloc.add(const CounterEvent.increment()))
+          .thenReturn(null);
       await tester.pumpApp(
         BlocProvider.value(
           value: counterBloc,
@@ -52,13 +53,14 @@ void main() {
         ),
       );
       await tester.tap(find.byIcon(Icons.add));
-      verifyNever(() => counterBloc.add(CounterIncrementPressed()));
+      verifyNever(() => counterBloc.add(const CounterEvent.increment()));
     });
 
     testWidgets('calls decrement when decrement button is tapped',
         (tester) async {
-      when(() => counterBloc.state).thenReturn(0);
-      when(() => counterBloc.add(CounterDecrementPressed())).thenReturn(null);
+      when(() => counterBloc.state).thenReturn(const CounterState.current(0));
+      when(() => counterBloc.add(const CounterEvent.decrement()))
+          .thenReturn(null);
       await tester.pumpApp(
         BlocProvider.value(
           value: counterBloc,
@@ -66,7 +68,7 @@ void main() {
         ),
       );
       await tester.tap(find.byIcon(Icons.remove));
-      verifyNever(() => counterBloc.add(CounterDecrementPressed()));
+      verifyNever(() => counterBloc.add(const CounterEvent.decrement()));
     });
   });
 }
