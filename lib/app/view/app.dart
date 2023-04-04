@@ -8,17 +8,21 @@ import 'package:window_size/window_size.dart';
 import 'package:comal/counter/counter.dart';
 import 'package:comal/l10n/l10n.dart';
 import 'package:comal/platform.dart';
+import 'package:comal/routes/router.dart';
 
 class App extends StatelessWidget {
-  const App({super.key});
+  App({super.key});
+
+  final _appRouter = AppRouter();
 
   @override
   Widget build(BuildContext context) {
     if (Platform.isDesktop) {
       setWindowTitle("ComaL ABP");
     }
-    return MaterialApp(
+    return MaterialApp.router(
       debugShowCheckedModeBanner: true,
+      routerConfig: _appRouter.config(),
       theme: ThemeData(
         appBarTheme: const AppBarTheme(color: Color(0xFF13B9FF)),
         colorScheme: ColorScheme.fromSwatch(
@@ -27,7 +31,7 @@ class App extends StatelessWidget {
       ),
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      home: const CounterPage(),
+//      home: const CounterPage(),
     );
   }
 }
