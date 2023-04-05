@@ -6,6 +6,7 @@ import 'package:auto_route/auto_route.dart';
 
 // Project imports:
 import 'package:comal/counter/counter.dart';
+import 'package:comal/splash/splash.dart';
 
 part 'router.gr.dart';
 
@@ -16,6 +17,6 @@ class AppRouter extends _$AppRouter {
 
   @override
   final List<AutoRoute> routes = [
-    AutoRoute(path: '/', page: CounterRoute.page)
+    AutoRoute(path: '/', page: SplashRoute.page)
   ];
 }
