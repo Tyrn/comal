@@ -26,7 +26,7 @@ dependencies:
       ref: 6c66ad23ee79749f30a8eece542cf54eaf157ed8
 
 dev_dependencies:
-  auto_route_generator: ^6.0.0
+  auto_route_generator: ^6.1.0
   bloc_test: ^9.1.1
   build_runner: ^2.3.3
   flutter_test:
