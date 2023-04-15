@@ -30,6 +30,7 @@ class SplashView extends StatelessWidget {
     final l10n = context.l10n;
     return Scaffold(
       appBar: AppBar(title: Text(l10n.counterAppBarTitle)),
+      backgroundColor: const Color(0xFFAAAA00),
       body: const Center(child: SplashText()),
       floatingActionButton: Column(
         mainAxisAlignment: MainAxisAlignment.end,

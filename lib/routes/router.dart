@@ -18,6 +18,6 @@ class AppRouter extends _$AppRouter {
 
   @override
   final List<AutoRoute> routes = [
-    AutoRoute(path: '/', page: AlterCounterRoute.page)
+    AutoRoute(path: '/', page: SplashRoute.page)
   ];
 }
