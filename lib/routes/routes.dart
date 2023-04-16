@@ -4,8 +4,6 @@ import 'package:auto_route/auto_route.dart';
 // Project imports:
 import 'package:comal/routes/routes.gr.dart';
 
-//part 'router.gr.dart';
-
 @AutoRouterConfig(replaceInRouteName: 'Page,Route')
 class AppRouter extends $AppRouter {
   @override
@@ -13,6 +11,13 @@ class AppRouter extends $AppRouter {
 
   @override
   List<AutoRoute> get routes => [
-        AutoRoute(path: '/', page: SplashRoute.page),
+        AutoRoute(
+          path: '/',
+          page: SplashRoute.page,
+          children: [
+            AutoRoute(path: '', page: CounterRoute.page),
+            AutoRoute(path: '', page: AlterCounterRoute.page),
+          ],
+        ),
       ];
 }

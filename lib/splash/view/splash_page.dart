@@ -16,49 +16,41 @@ class SplashPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (_) => SplashBloc(),
-      child: const SplashView(),
-    );
-  }
-}
-
-class SplashView extends StatelessWidget {
-  const SplashView({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    final l10n = context.l10n;
     return Scaffold(
-      appBar: AppBar(title: Text(l10n.counterAppBarTitle)),
-      backgroundColor: const Color(0xFFAAAA00),
-      body: const Center(child: SplashText()),
-      floatingActionButton: Column(
-        mainAxisAlignment: MainAxisAlignment.end,
-        crossAxisAlignment: CrossAxisAlignment.end,
-        children: [
-          FloatingActionButton(
-            onPressed: () => context.read<SplashBloc>().increment(),
-            child: const Icon(Icons.arrow_upward),
-          ),
-          const SizedBox(height: 8),
-          FloatingActionButton(
-            onPressed: () => context.read<SplashBloc>().decrement(),
-            child: const Icon(Icons.arrow_downward),
-          ),
+      appBar: AppBar(
+        title: const Text('Splash Page'),
+      ),
+      body: AutoTabsRouter(
+        routes: const [
+          CounterRoute(),
+          AlterCounterRoute(),
         ],
+        duration: const Duration(milliseconds: 400),
+        transitionBuilder: (context, child, animation) => FadeTransition(
+          opacity: animation,
+          // the passed child is technically our animated selected-tab page
+          child: child,
+        ),
+        builder: (context, child) {
+          final tabsRouter = context.tabsRouter;
+          return Scaffold(
+            body: child,
+            bottomNavigationBar: buildBottomNavigationBar(context, tabsRouter),
+          );
+        },
       ),
     );
   }
 }
 
-class SplashText extends StatelessWidget {
-  const SplashText({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final count = context.select((SplashBloc bloc) => bloc.state.value);
-    return Text('$count', style: theme.textTheme.displayLarge);
-  }
+BottomNavigationBar buildBottomNavigationBar(
+    BuildContext context, TabsRouter tabsRouter,) {
+  return BottomNavigationBar(
+    onTap: tabsRouter.setActiveIndex,
+    currentIndex: tabsRouter.activeIndex,
+    items: const [
+      BottomNavigationBarItem(icon: Icon(Icons.event), label: 'Counter'),
+      BottomNavigationBarItem(icon: Icon(Icons.poll), label: 'AlterCounter'),
+    ],
+  );
 }
