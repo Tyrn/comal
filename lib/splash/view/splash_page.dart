@@ -17,15 +17,15 @@ class SplashPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Splash Page'),
-      ),
+      // appBar: AppBar(
+      //  title: const Text('Splash Page'),
+      // ),
       body: AutoTabsRouter(
         routes: const [
           CounterRoute(),
           AlterCounterRoute(),
         ],
-        duration: const Duration(milliseconds: 400),
+        duration: const Duration(milliseconds: 300),
         transitionBuilder: (context, child, animation) => FadeTransition(
           opacity: animation,
           // the passed child is technically our animated selected-tab page
