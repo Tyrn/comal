@@ -8,7 +8,7 @@ import 'package:window_size/window_size.dart';
 import 'package:comal/counter/counter.dart';
 import 'package:comal/l10n/l10n.dart';
 import 'package:comal/platform.dart';
-import 'package:comal/routes/router.dart';
+import 'package:comal/routes/routes.dart';
 
 class App extends StatelessWidget {
   App({super.key});

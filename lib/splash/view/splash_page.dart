@@ -7,6 +7,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 // Project imports:
 import 'package:comal/l10n/l10n.dart';
+import 'package:comal/routes/routes.gr.dart';
 import 'package:comal/splash/splash.dart';
 
 @RoutePage()
